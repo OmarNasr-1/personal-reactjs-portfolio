@@ -19,6 +19,7 @@ import projImg12 from "../assets/img/PROJECTS/weather.JPG";
 import projImg13 from "../assets/img/PROJECTS/main-portfolio.JPG";
 import projImg14 from "../assets/img/PROJECTS/seimon.png";
 import projImg15 from "../assets/img/PROJECTS/zero.png";
+import projImg16 from "../assets/img/PROJECTS/to-do.png";
 
 export const projects = {
   native:[
@@ -203,7 +204,19 @@ export const projects = {
         },
       },
     },
+    {
+      title: "let's do it",
+      description: "next js & tailwind ",
+      imgUrl:projImg16,
+      button: {
+        text: "View Project",
+        onClick: () => {
+            window.open("https://github.com/OmarNasr-1/let-s-do-it", "_blank");
 
+        },
+      },
+    },
+    
   ],
 
   reactjs:[

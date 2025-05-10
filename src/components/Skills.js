@@ -1,8 +1,6 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import "./skills.css"
 
 import colorSharp from "../assets/img/color-sharp.png"
 import colorSharp2 from "../assets/img/color-sharp2.png"
@@ -27,6 +25,20 @@ export const Skills = () => {
     }
   };
 
+  const skills = [
+    { name: "React js", percentage: 85 },
+    { name: "Next.js", percentage: 80 },
+    { name: "JavaScript", percentage: 85 },
+    { name: "TypeScript", percentage: 80 },
+    { name: "Directus CMS", percentage: 75 },
+    { name: "DevOps", percentage: 70 },
+    { name: "Vibe Coding", percentage: 95 },
+    { name: "HTML5", percentage: 90 },
+    { name: "CSS3", percentage: 85 },
+    { name: "BootStrap5", percentage: 80 },
+    { name: "Tailwind CSS", percentage: 85 }
+  ];
+
   return (
     <section className="skill" id="skills">
         <div className="container">
@@ -37,26 +49,56 @@ export const Skills = () => {
                         <p>Write well designed, testable, efficient code by using best software <br></br>
                            development practices using different web languages and techniques</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="meter1" />
-                                <h4>HTML5</h4>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="meter2" />
-                                <h4>CSS3</h4>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="meter3" />
-                                <h4>BootStrap5</h4>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="meter2" />
-                                <h4>JavaScript</h4>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="meter2" />
-                                <h4>React js</h4>
-                            </div>
+                            {skills.map((skill, index) => (
+                                <div className="item" key={index}>
+                                    <div className="skill-container" style={{
+                                        position: "relative",
+                                        width: "150px",
+                                        height: "150px",
+                                        margin: "0 auto"
+                                    }}>
+                                        {/* Animated border */}
+                                        <div className="skill-border" style={{
+                                            position: "absolute",
+                                            top: 0,
+                                            left: 0,
+                                            width: "100%",
+                                            height: "100%",
+                                            borderRadius: "50%",
+                                            border: "8px solid #4A2FBD",
+                                            borderTopColor: "transparent",
+                                            animation: "spin 1.5s linear infinite"
+                                        }}></div>
+                                        
+                                        {/* Static content */}
+                                        <div className="skill-content" style={{
+                                            position: "absolute",
+                                            top: 0,
+                                            left: 0,
+                                            width: "100%",
+                                            height: "100%",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}>
+                                            <div className="skill-inner-circle" style={{
+                                                width: "120px",
+                                                height: "120px",
+                                                borderRadius: "50%",
+                                                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                backdropFilter: "blur(5px)"
+                                            }}>
+                                                <span style={{ color: "white", fontSize: "18px", fontWeight: "bold" }}>
+                                                    {skill.name}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </Carousel>
                     </div>
                 </div>

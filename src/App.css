@@ -245,6 +245,56 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
 
+/* Mobile Navbar Improvements */
+@media (max-width: 767px) {
+  nav.navbar {
+    padding: 10px 0;
+    
+  }
+  
+  nav.navbar .navbar-collapse {
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  nav.navbar.navbar-expanded {
+    background: rgba(18, 18, 18, 0.9);
+  }
+
+  nav.navbar .navbar-nav {
+    margin-bottom: 15px;
+  }
+
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 12px 0;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  nav.navbar .navbar-text {
+    padding-top: 15px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  nav.navbar .social-icon {
+    margin-bottom: 15px;
+    justify-content: center;
+    display: flex;
+  }
+  
+  nav.navbar .nav-btn {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -316,73 +366,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
         transform: translateY(-10px);
     }
 }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
 }
 
-/************ Skills Css ************/
-.skill {
-  padding: 0 0 50px 0;
-  position: relative;
-}
-.skill-bx {
-  background: linear-gradient(rgba(52, 6, 52, 0.709), rgba(78, 21, 21, 0.526)), url("assets/img/The_Employability_Skills_You_Need_social.png");  
-  background-attachment: fixed;
-  background-size:contain;
-  background-repeat: no-repeat;
-border-radius: 64px;
-  text-align: center;
-  padding: 30px 50px 30px 50px;
-  margin-top: -60px;
-    /* fallback for old browsers */
- 
-}
-.skill h2 {
-	font-size: 45px;
-	font-weight: 700;
-}
-.skill p {
-    color: #B8B8B8;
-    font-size: 20px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    margin: 14px 0 14px 0;
-}
-.skill-slider {
-  width: 95%;
-  margin: 0 auto;
-  position: relative;
-
-}
-.skill-slider .item img {
-  width: 50%;
-
-  margin: 0 auto 15px auto;
-}
-.background-image-left {
-  top: 28%;
-  position: absolute;
-  bottom: 0;
-  width: 40%;
-  z-index: -4;
-}
-.background-image-rgihT{
-  top: 28%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  z-index: -4;
-}
-
-.react-multiple-carousel__arrow--left
-{
-  left: calc(1% + 1px) !important;
-}
-.react-multiple-carousel__arrow--right
-{
-  right: calc(1% + 1px) !important;
-}
 
 /************ Projects Css ************/
 .project {
@@ -640,6 +631,24 @@ border-radius: 64px;
   display: inline-flex !important;
 }
 
+.newsletter-bx .exp-link {
+  color: #AA367C;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.newsletter-bx .exp-link:hover {
+  color: #4A2FBD;
+  text-decoration: underline;
+}
+
+.newsletter-bx .divider {
+  margin: 15px 0;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
 
 .footer img {
   width: 26%;
@@ -649,6 +658,52 @@ border-radius: 64px;
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+.load-more-btn:hover {
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%) !important;
+  border-color: transparent !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.load-more-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.edu {
+  display: flex !important;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.info-title {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.info-content {
+  flex: 1;
+}
+
+@media (max-width: 767px) {
+  .edu {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .info-title {
+    margin-bottom: 5px;
+  }
+  
+  .info-content {
+    padding-left: 10px;
+  }
+  
+  .newsletter-bx {
+    padding: 20px 25px;
+  }
 }
 
 

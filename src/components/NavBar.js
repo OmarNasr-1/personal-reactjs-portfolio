@@ -14,6 +14,7 @@ export const NavBar = () => {
 
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -31,11 +32,17 @@ export const NavBar = () => {
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
+    setExpanded(false); // Close navbar when a link is clicked
   }
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar 
+        expand="md" 
+        className={`${scrolled ? "scrolled" : ""} ${expanded ? "navbar-expanded" : ""}`}
+        expanded={expanded}
+        onToggle={setExpanded}
+      >
         <Container>
           <Navbar.Brand href="#">
             <img src={logo} alt="Logo" />
@@ -52,12 +59,12 @@ export const NavBar = () => {
             <span className="navbar-text">
               <div className="social-icon">
                 <a title="linkedin" className="mb-1" target="_blank" href="https://www.linkedin.com/in/omarnasr-1/"><img src={navIcon1} alt="" /></a>
-                <a  title="github" className="mb-1" target="_blank"  href="https://github.com/OmarNasr-1"><img src={navIcon2} alt="" /></a>
+                <a title="github" className="mb-1" target="_blank" href="https://github.com/OmarNasr-1"><img src={navIcon2} alt="" /></a>
                 <a title="instagram" target="_blank" href="https://www.instagram.com/omar._nasr/"><img src={navIcon3} alt="" /></a>
-                <a  title="whatsapp" target="_blank" href="https://wa.me/01158952209"><img className="text-light" src={navIcon4} alt="" /></a>
+                <a title="whatsapp" target="_blank" href="https://wa.me/01158952209"><img className="text-light" src={navIcon4} alt="" /></a>
               </div>
               <HashLink to='#connect'>
-                <button className="nav-btn"><span>Let’s Connect</span></button>
+                <button className="nav-btn"><span>Let's Connect</span></button>
               </HashLink>
             </span>
           </Navbar.Collapse>

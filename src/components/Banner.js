@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
+  const toRotate = [ "Full-Stack Developer", "System Designer" ];
   const period = 1000;
 
   useEffect(() => {
@@ -57,9 +57,9 @@ export const Banner = () => {
               <div className={isVisible ? "animate__animated animate__fadeInTopLeft  slow" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi,I'm Omar`} </h1>
-                <h2><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h2>
+                <h2><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Full-Stack Developer", "System Designer" ]'><span className="wrap">{text}</span></span></h2>
                   <p className="w-75">
-                   I'm a Web Developer with over 3 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Having an in-depth knowledge including advanced HTML5, CSS3, SASS, BootStrap5, JSON, JavaScript, JQuery, React Js
+                   I'm A Full-Stack Developer  with over 3 years of experience specializing in web development. Experienced with all stages of the development cycle for dynamic web projects. Having an in-depth knowledge including advanced HTML5 , CSS3 , SASS, BootStrap5 ,tailwind CSS ,JSON ,JavaScript ,TypeScript ,JQuery ,React Js ,Next js ,Directus CMS
                   </p>
                   <a className="cv" target="_blank" href="https://drive.google.com/file/d/11Vjm_0HZlobNo-WaUWaZWjteCfYjVi2e/view?usp=drive_link">Viwe Resume<PersonBoundingBox size={25} /></a>
               </div>}
