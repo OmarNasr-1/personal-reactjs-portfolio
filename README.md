@@ -1,7 +1,7 @@
 # Portfolio Website in React js
 
 
-<img width="1266" alt="HOME" src=" ">
+<img width="1266" alt="HOME" src="./src/assets/img/portfolio.png">
 
 Built using:
 
